@@ -3,6 +3,10 @@ export interface NodeApiItem {
   name: string;
   status: number;
   inx?: number;
+  remark?: string;
+  tags?: string;
+  expiryTime?: number;
+  renewalCycle?: "month" | "quarter" | "year" | "";
   syncError?: string;
   [key: string]: unknown;
 }
@@ -44,6 +48,7 @@ export interface ForwardApiItem {
   name: string;
   status: number;
   tunnelName?: string;
+  tunnelTrafficRatio?: number;
   inIp?: string;
   inPort?: number;
   remoteAddr?: string;
@@ -214,6 +219,10 @@ export interface NodeMutationPayload {
   name?: string;
   status?: number;
   inx?: number;
+  remark?: string;
+  tags?: string;
+  expiryTime?: number;
+  renewalCycle?: "month" | "quarter" | "year" | "";
   serverIp?: string;
   serverIpV4?: string;
   serverIpV6?: string;
